@@ -1,4 +1,4 @@
-# 📊 Analyse des Ventes En ligne — SQL Server & Power BI
+# 📊 Analyse des ventes en ligne 
 
 > *Transformer des rapports de ventes statiques en un tableau de bord interactif permettant au Responsable des Ventes de suivre la performance par produit, client et période, en comparaison avec le budget.*
 
