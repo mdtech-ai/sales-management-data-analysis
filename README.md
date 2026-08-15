@@ -42,7 +42,7 @@
 
 **Résultat :** Un tableau de bord interactif filtrable par produit, client et période, comparant ventes réelles et budget mois par mois.
 
-![Vue d'ensemble du dashboard](docs/images/dashboard_overview.png)
+![Vue d'ensemble du dashboard](/visuels/VueEnsemble_dashboard.png)
 
 ---
 
@@ -58,8 +58,6 @@ Avant toute action technique, le besoin a été formalisé pour s'assurer que la
 | **Valeur du changement** | Tableaux de bord visuels et amélioration du suivi des ventes |
 | **Systèmes nécessaires** | Power BI, CRM |
 | **Autres informations utiles** | Budget transmis au format Excel |
-
-> Demande originale : [`docs/images/business_request.png`](docs/images/business_request.png)
 
 ### Récits utilisateur (User Stories)
 
@@ -101,16 +99,17 @@ Avant toute action technique, le besoin a été formalisé pour s'assurer que la
 | Stockage des données | SQL Server (AdventureWorksDW) |
 | Traitement des données | T-SQL |
 | Visualisation | Power BI Desktop, Power Query, DAX |
-| Versionnement | Git / GitHub |
-| Documentation | Markdown |
 
 ---
 
 ## 5. Structure du repository
 
 ```
-sales-analysis-sql-powerbi/
+sales-management-data-analysis/
 │
+├── data/
+│   └── budget/
+│       └── budget.xlsx             # Fichier budget externe
 ├── sql/
 │   ├── 01_update_dates.sql         # Mise à jour temporelle de la base
 │   ├── 02_clean_dimproduct.sql     # Nettoyage table Produit
@@ -120,16 +119,14 @@ sales-analysis-sql-powerbi/
 ├── powerbi/
 │   └── sales_dashboard.pbix        # Fichier du dashboard
 │
-├── data/
-│   └── budget/
-│       └── budget.xlsx             # Fichier budget externe
+
 │
-├── docs/
-│   └── images/
-│       ├── business_request.png
-│       ├── data_model.png
-│       ├── dashboard_overview.png
-│       └── dashboard_filters.png
+├── visuels/
+│   ├── Details_clients.png
+│   ├── Details_produits.png
+│   ├── Modelisation_etoile.png   
+│   └── VueEnsemble_dashboard.png   
+│       
 │
 └── README.md
 ```
@@ -309,11 +306,11 @@ Analyse descriptive orientée suivi de performance : comparaison des ventes rée
 
 ---
 
+
 ## 13. Améliorations futures
 
 - [ ] Étendre l'analyse à `FactResellerSales` pour couvrir le filtre par vendeur demandé initialement
 - [ ] Automatiser la mise à jour du budget via une source connectée plutôt qu'un fichier Excel statique
-- [ ] Publier le dashboard via un compte Power BI non restreint pour un accès web public
 
 ---
 
@@ -324,9 +321,3 @@ Analyse descriptive orientée suivi de performance : comparaison des ventes rée
 | Scripts SQL | Mise à jour des dates et nettoyage des dimensions | [`sql/`](sql/) |
 | Dashboard Power BI | Fichier source du tableau de bord | [`powerbi/sales_dashboard.pbix`](powerbi/sales_dashboard.pbix) |
 | Captures d'écran | Vues du dashboard et du modèle de données | [`docs/images/`](docs/images/) |
-
----
-
-## 15. Auteur
-
-**Mamadou DIALLO** — Ingénieur IA & Big Data 
