@@ -1,0 +1,32 @@
+SELECT [ProductKey]
+      ,[OrderDateKey]
+      ,[DueDateKey]
+      ,[ShipDateKey]
+      ,[CustomerKey]
+      -- ,[PromotionKey]
+      -- ,[CurrencyKey]
+      -- ,[SalesTerritoryKey]
+      ,[SalesOrderNumber]
+      -- ,[SalesOrderLineNumber]
+      -- ,[RevisionNumber]
+      -- ,[OrderQuantity]
+      -- ,[UnitPrice]
+      -- ,[ExtendedAmount]
+      -- ,[UnitPriceDiscountPct]
+      -- ,[DiscountAmount]
+      -- ,[ProductStandardCost]
+      -- ,[TotalProductCost]
+      ,[SalesAmount]
+      -- ,[TaxAmt]
+      -- ,[Freight]
+      -- ,[CarrierTrackingNumber]
+      -- ,[CustomerPONumber]
+      -- ,[OrderDate]
+      -- ,[DueDate]
+      --,[ShipDate]
+
+  FROM [dbo].[FactInternetSales]
+  WHERE 
+  LEFT(OrderDateKey, 4) >= YEAR(GETDATE()) - 2  -- Nous assurer de toujours récupérer les données des 2 dernières années lors de l'extraction  
+  ORDER BY 
+    OrderDateKey ASC 
